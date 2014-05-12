@@ -18,7 +18,7 @@
  *
  */
 
-package com.cyanogenmod.dotcase;
+package org.cyanogenmod.dotcase;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -18,7 +18,7 @@
  *
  */
 
-package com.cyanogenmod.dotcase;
+package org.cyanogenmod.dotcase;
 
 import android.app.Activity;
 import android.os.Bundle;
