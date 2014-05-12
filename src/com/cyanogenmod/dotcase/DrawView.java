@@ -32,8 +32,9 @@ public class DrawView extends View {
                        "0" + Integer.toString(Calendar.getInstance().get(Calendar.MINUTE)) :
                        Integer.toString(Calendar.getInstance().get(Calendar.MINUTE)));
         int[] sprite;
-        int col;
-        int row;
+        int col, row;
+        double left, right, top, bottom;
+
         for (int i = 0; i < time.length(); i++) {
             Log.e(TAG, "char " + i + " is " + time.charAt(i));
             sprite = getSprite(time.charAt(i));
@@ -47,10 +48,15 @@ public class DrawView extends View {
                 }
 
                 if (sprite[j] == 1) {
-                    canvas.drawRect((float)(((col + i * 5) + 4) * dotratio),       // left
-                                    (float)((row + 6) * dotratio),                 // top
-                                    (float)(((col + i * 5) + 4 + 1) * dotratio), // right
-                                    (float)((row + 6 + 1) * dotratio),           // bottom
+                    left = ((col + i * 5) + 4) * dotratio;
+                    top = (row + 6) * dotratio;
+                    right = ((col + i * 5) + 4 + 1) * dotratio;
+                    bottom = (row + 6 + 1) * dotratio;
+
+                    canvas.drawRect((float) left,
+                                    (float) top,
+                                    (float) right,
+                                    (float) bottom,
                                     paint);
                 }
 
