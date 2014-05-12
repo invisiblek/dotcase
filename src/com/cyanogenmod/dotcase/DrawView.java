@@ -27,7 +27,10 @@ public class DrawView extends View {
 
     @Override
     public void onDraw(Canvas canvas) {
-        String time = Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) +
+        String time = ((Calendar.getInstance().get(Calendar.HOUR_OF_DAY) < 10) ?
+                       "0" + Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) :
+                       Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)))
+                      +
                       ((Calendar.getInstance().get(Calendar.MINUTE) < 10) ?
                        "0" + Integer.toString(Calendar.getInstance().get(Calendar.MINUTE)) :
                        Integer.toString(Calendar.getInstance().get(Calendar.MINUTE)));
