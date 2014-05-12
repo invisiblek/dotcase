@@ -59,15 +59,15 @@ public class DrawView extends View {
         double left, right, top, bottom;
 
         canvas.drawRect((float)(13 * dotratio),
-                        (float)(10 * dotratio),
+                        (float)(9 * dotratio),
                         (float)(14 * dotratio),
-                        (float)(11 * dotratio),
+                        (float)(10 * dotratio),
                         paint);
 
         canvas.drawRect((float)(13 * dotratio),
+                        (float)(12 * dotratio),
+                        (float)(14 * dotratio),
                         (float)(13 * dotratio),
-                        (float)(14 * dotratio),
-                        (float)(14 * dotratio),
                         paint);
 
         for (int i = 0; i < time.length(); i++) {
@@ -76,7 +76,7 @@ public class DrawView extends View {
             col = 0;
             row = 0;
 
-            for (int j = 0; j < 48; j++) {
+            for (int j = 0; j < 44; j++) {
                 if (col > 3) {
                     col = 0;
                     row++;
@@ -112,7 +112,7 @@ public class DrawView extends View {
         int[] sprite;
         switch (c) {
             case '0': sprite = new int[]
-                               {1, 1, 1, 1,
+                               {0, 1, 1, 0,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
@@ -122,14 +122,12 @@ public class DrawView extends View {
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
-                                1, 0, 0, 1,
-                                1, 1, 1, 1 };
+                                0, 1, 1, 0 };
                       break;
             case '1': sprite = new int[]
                                {0, 0, 1, 0,
                                 0, 1, 1, 0,
                                 1, 1, 1, 0,
-                                0, 0, 1, 0,
                                 0, 0, 1, 0,
                                 0, 0, 1, 0,
                                 0, 0, 1, 0,
@@ -150,7 +148,6 @@ public class DrawView extends View {
                                 0, 1, 0, 0,
                                 1, 0, 0, 0,
                                 1, 0, 0, 0,
-                                1, 0, 0, 0,
                                 1, 1, 1, 1 };
                       break;
             case '3': sprite = new int[]
@@ -160,7 +157,6 @@ public class DrawView extends View {
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 1, 1, 0,
-                                0, 1, 1, 0,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
@@ -168,14 +164,13 @@ public class DrawView extends View {
                                 0, 1, 1, 0 };
                       break;
             case '4': sprite = new int[]
-                               {0, 0, 0, 1,
-                                0, 0, 1, 1,
-                                0, 0, 1, 1,
-                                0, 1, 0, 1,
-                                0, 1, 0, 1,
+                               {1, 0, 0, 1,
+                                1, 0, 0, 1,
+                                1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 1, 1, 1,
+                                0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
@@ -188,7 +183,6 @@ public class DrawView extends View {
                                 1, 0, 0, 0,
                                 1, 0, 0, 0,
                                 1, 1, 1, 0,
-                                0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
@@ -206,22 +200,20 @@ public class DrawView extends View {
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
-                                1, 0, 0, 1,
                                 0, 1, 1, 0 };
                       break;
             case '7': sprite = new int[]
                                {1, 1, 1, 1,
                                 1, 0, 0, 1,
+                                1, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
                                 0, 0, 0, 1,
-                                0, 0, 1, 0,
-                                0, 0, 1, 0,
-                                0, 0, 1, 0,
-                                0, 1, 0, 0,
-                                0, 1, 0, 0,
-                                0, 1, 0, 0,
-                                0, 1, 0, 0 };
+                                0, 0, 0, 1,
+                                0, 0, 0, 1,
+                                0, 0, 0, 1,
+                                0, 0, 0, 1,
+                                0, 0, 0, 1 };
                       break;
             case '8': sprite = new int[]
                                {0, 1, 1, 0,
@@ -230,7 +222,6 @@ public class DrawView extends View {
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 0, 1, 1, 0,
-                                0, 1, 1, 0,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
@@ -238,8 +229,7 @@ public class DrawView extends View {
                                 0, 1, 1, 0 };
                       break;
             case '9': sprite = new int[]
-                               {0, 1, 1, 1,
-                                1, 0, 0, 1,
+                               {0, 1, 1, 0,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
                                 1, 0, 0, 1,
@@ -253,7 +243,6 @@ public class DrawView extends View {
                       break;
             default: sprite = new int[]
                                {0, 0, 0, 0,
-                                0, 0, 0, 0,
                                 0, 0, 0, 0,
                                 0, 0, 0, 0,
                                 0, 0, 0, 0,
