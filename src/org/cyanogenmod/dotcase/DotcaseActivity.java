@@ -22,16 +22,32 @@ package org.cyanogenmod.dotcase;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class DotcaseActivity extends Activity
 {
     private static final String TAG = "Dotcase";
+    private static final String COVER_FILE = "/sys/android_touch/cover";
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        final DrawView drawView = new DrawView(this);
-        setContentView(drawView);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(COVER_FILE));
+            String value = br.readLine();
+            br.close();
+
+            if(value.equals("1")) {
+                final DrawView drawView = new DrawView(this);
+                setContentView(drawView);
+            }
+        } catch (IOException ex) {
+            Log.e(TAG, ex.toString());
+        }
     }
 }
