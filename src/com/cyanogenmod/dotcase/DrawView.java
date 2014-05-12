@@ -35,6 +35,18 @@ public class DrawView extends View {
         int col, row;
         double left, right, top, bottom;
 
+        canvas.drawRect((float)(13 * dotratio),
+                        (float)(10 * dotratio),
+                        (float)(14 * dotratio),
+                        (float)(11 * dotratio),
+                        paint);
+
+        canvas.drawRect((float)(13 * dotratio),
+                        (float)(13 * dotratio),
+                        (float)(14 * dotratio),
+                        (float)(14 * dotratio),
+                        paint);
+
         for (int i = 0; i < time.length(); i++) {
             Log.e(TAG, "char " + i + " is " + time.charAt(i));
             sprite = getSprite(time.charAt(i));
@@ -52,6 +64,14 @@ public class DrawView extends View {
                     top = (row + 6) * dotratio;
                     right = ((col + i * 5) + 4 + 1) * dotratio;
                     bottom = (row + 6 + 1) * dotratio;
+
+                if (i < 2) {
+                    left = left - dotratio;
+                    right = right - dotratio;
+                } else {
+                    left = left + dotratio;
+                    right = right + dotratio;
+                }
 
                     canvas.drawRect((float) left,
                                     (float) top,
