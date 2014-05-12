@@ -73,10 +73,10 @@ public class DrawView extends View {
                     right = right + dotratio;
                 }
 
-                    canvas.drawRect((float) left,
-                                    (float) top,
-                                    (float) right,
-                                    (float) bottom,
+                    canvas.drawRect((float) left + 2,
+                                    (float) top + 2,
+                                    (float) right - 2,
+                                    (float) bottom -2,
                                     paint);
                 }
 
