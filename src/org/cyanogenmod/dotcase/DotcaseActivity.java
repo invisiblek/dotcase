@@ -23,7 +23,9 @@ package org.cyanogenmod.dotcase;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup.LayoutParams;
 import android.view.View;
+import android.view.WindowManager;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -45,6 +47,10 @@ public class DotcaseActivity extends Activity
 
             if(value.equals("1")) {
                 setTheme(R.style.Holo);
+                getWindow().addFlags(
+                            WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|
+                            WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED|
+                            WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
                 getWindow().getDecorView().setSystemUiVisibility(
                             View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
                             View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
